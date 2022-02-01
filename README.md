@@ -5,6 +5,9 @@ This Repo is following the codecademy "Interview Practice Python" Course.
 In this repo, I will be creating amny linear and complex data structures along with different corting and searching algorithms that i can later apply to other python based projects.
 
 ## Updates
+### v1.1.2
+- Added a Doubly Linked List (based off of Codecademy, rework required)
+- Recordered project directory structure
 ### v1.1.1
 Started the Linear Data Structures aspect.
 - Added a Linked List
