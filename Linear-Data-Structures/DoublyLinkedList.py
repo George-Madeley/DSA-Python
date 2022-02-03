@@ -91,7 +91,7 @@ class DoubleLinkedList:
       nextNode.set_prev_node(prevNode)
     return nodeToRemove
 
-  def __str__():
+  def __str__(self):
     stringList = ""
     currentNode = self.head
     while currentNode != None:
