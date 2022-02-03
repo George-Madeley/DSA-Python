@@ -6,7 +6,8 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 ### v1.1.3
-Redesigned Double Linked List to use own code and design. This is still loosly based off of Codecademy but using my own code instead of direct copy.
+- Redesigned Double Linked List to use own code and design. This is still loosly based off of Codecademy but using my own code instead of direct copy.
+- Cahnged ToString() and Stringify() methods to use magic methods `__str__()`
 ### v1.1.2
 - Added a Doubly Linked List (based off of Codecademy, rework required)
 - Recordered project directory structure

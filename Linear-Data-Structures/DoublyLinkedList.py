@@ -19,101 +19,83 @@ class Node:
   def get_value(self):
     return self.value
 
-
-class DoublyLinkedList:
+class DoubleLinkedList:
   def __init__(self):
-    self.head_node = None
-    self.tail_node = None
-  
-  def add_to_head(self, new_value):
-    new_head = Node(new_value)
-    current_head = self.head_node
+    self.head = None
+    self.tail = None
 
-    if current_head != None:
-      current_head.set_prev_node(new_head)
-      new_head.set_next_node(current_head)
+  def addHead(self, newValue):
+    newNode = Node(newValue)
+    oldHead = self.head
+    if oldHead != None:
+      newNode.set_next_node(oldHead)
+      oldHead.set_prev_node(newNode)
+    self.head = newNode
+    if self.tail == None:
+      self.tail = newNode
 
-    self.head_node = new_head
+  def addTail(self, newValue):
+    newNode = Node(newValue)
+    oldTail = self.tail
+    if oldTail != None:
+      newNode.set_prev_node(oldTail)
+      oldTail.set_next_node(newNode)
+    self.tail = newNode
+    if self.head == None:
+      self.head = newNode
 
-    if self.tail_node == None:
-      self.tail_node = new_head
+  def removeHead(self):
+    removeHead = self.head
+    if removeHead == None:
+      return None
+    nextNode = removeHead.get_next_node()
+    if nextNode != None:
+      nextNode.set_prev_node(None)
+    self.head = nextNode
+    if self.tail == removeHead:
+      self.removeTail()
+    return removeHead.get_value()
 
-  def add_to_tail(self, new_value):
-    new_tail = Node(new_value)
-    current_tail = self.tail_node
+  def removeTail(self):
+    removeTail = self.tail
+    if removeTail == None:
+      return None
+    prevNode = removeTail.get_prev_node()
+    if prevNode != None:
+      prevNode.set_next_node(None)
+    self.tail = prevNode
+    if self.head == removeTail:
+      self.removeHead()
+    return removeTail.get_value()
 
-    if current_tail != None:
-      current_tail.set_next_node(new_tail)
-      new_tail.set_prev_node(current_tail)
+  def removeByValue(self, valueToRemove):
+    currentNode = self.head
+    nodeToRemove = None
+    while currentNode != None:
+      if currentNode.get_value() == valueToRemove:
+        nodeToRemove = currentNode
+        break;
+      currentNode = currentNode.get_next_node()
 
-    self.tail_node = new_tail
-
-    if self.head_node == None:
-      self.head_node = new_tail
-
-  def remove_head(self):
-    removed_head = self.head_node
-
-    if removed_head == None:
+    if nodeToRemove == None:
       return None
 
-    self.head_node = removed_head.get_next_node()
-
-    if self.head_node != None:
-      self.head_node.set_prev_node(None)
-
-    if removed_head == self.tail_node:
-      self.remove_tail()
-
-    return removed_head.get_value()
-
-  def remove_tail(self):
-    removed_tail = self.tail_node
-
-    if removed_tail == None:
-      return None
-
-    self.tail_node = removed_tail.get_prev_node()
-
-    if self.tail_node != None:
-      self.tail_node.set_next_node(None)
-
-    if removed_tail == self.head_node:
-      self.remove_head()
-
-    return removed_tail.get_value()
-
-  def remove_by_value(self, value_to_remove):
-    node_to_remove = None
-    current_node = self.head_node
-
-    while current_node != None:
-      if current_node.get_value() == value_to_remove:
-        node_to_remove = current_node
-        break
-
-      current_node = current_node.get_next_node()
-
-    if node_to_remove == None:
-      return None
-
-    if node_to_remove == self.head_node:
-      self.remove_head()
-    elif node_to_remove == self.tail_node:
-      self.remove_tail()
+    if nodeToRemove == self.head:
+      self.removeHead()
+    elif nodeToRemove == self.tail:
+      self.removeTail()
     else:
-      next_node = node_to_remove.get_next_node()
-      prev_node = node_to_remove.get_prev_node()
-      next_node.set_prev_node(prev_node)
-      prev_node.set_next_node(next_node)
+      prevNode = nodeToRemove.get_prev_node()
+      nextNode = nodeToRemove.get_next_node()
+      prevNode.set_next_node(nextNode)
+      nextNode.set_prev_node(prevNode)
+    return nodeToRemove
 
-    return node_to_remove
-
-  def stringify_list(self):
-    string_list = ""
-    current_node = self.head_node
-    while current_node:
-      if current_node.get_value() != None:
-        string_list += str(current_node.get_value()) + "\n"
-      current_node = current_node.get_next_node()
-    return string_list
+  def __str__():
+    stringList = ""
+    currentNode = self.head
+    while currentNode != None:
+      if currentNode.get_value() != None:
+        stringList += str(currentNode.get_value()) + "\n"
+      currentNode = currentNode.get_next_node()
+    return stringList

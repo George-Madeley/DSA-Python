@@ -25,7 +25,7 @@ class LinkedList:
     new_node.set_next_node(self.head_node)
     self.head_node = new_node
     
-  def stringify_list(self):
+  def __str__(self):
     string_list = ""
     current_node = self.get_head_node()
     while current_node:
