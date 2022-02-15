@@ -6,6 +6,10 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.1.5
+
+- Created a Binary Search Class and implimented `FindIndexOfValue()`. It is based off of the Codecademy design.
+
 ### v1.1.4
 
 - Created a Search Algorithms Directory

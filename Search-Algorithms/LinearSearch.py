@@ -2,11 +2,11 @@ class LinearSearch:
     def __init__(self):
         pass
 
-    def findIndexOfValue(self, list, value):
-        for index in range(len(list)):
-            if list[index] == value:
+    def findIndexOfValue(self, searchList, target):
+        for index in range(len(searchList)):
+            if searchList[index] == target:
                 return index
-        raise ValueError("{0} not in list".format(value))
+        raise ValueError("{0} not in list".format(target))
 
     def findIndexesOfValue(self, list, value):
         indexes = []
