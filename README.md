@@ -6,6 +6,12 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.1.8
+
+- Added Docstring to DoubleLinkedList.py.
+- Added data types to DoubleLinkedList.py.
+- DoubleLinkedList class now uses the improved Node class instead of its own.
+
 ### v1.1.7
 
 - Added Docstring to LinkedList.py

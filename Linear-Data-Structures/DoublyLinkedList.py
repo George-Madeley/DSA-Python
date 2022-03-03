@@ -1,101 +1,137 @@
-class Node:
-  def __init__(self, value, next_node=None, prev_node=None):
-    self.value = value
-    self.next_node = next_node
-    self.prev_node = prev_node
-    
-  def set_next_node(self, next_node):
-    self.next_node = next_node
-    
-  def get_next_node(self):
-    return self.next_node
-
-  def set_prev_node(self, prev_node):
-    self.prev_node = prev_node
-    
-  def get_prev_node(self):
-    return self.prev_node
-  
-  def get_value(self):
-    return self.value
+from Node import Node
 
 class DoubleLinkedList:
-  def __init__(self):
-    self.head = None
-    self.tail = None
+  """
+  A double linked list to store data.
+  
+  Allows you to traverse through the
+  list forwards and backwards."""
+  def __init__(self) -> None:
+    """
+    Initialises the double linked list.
+    """
 
-  def addHead(self, newValue):
+    self.__head = None
+    self.__tail = None
+
+  def __str__(self) -> str:
+    """
+    Gets the string format of the double linked list.
+    
+    Returns:
+      String format of the double linked list.
+    """
+
+    stringList = ""
+    currentNode = self.__head
+    while currentNode != None:
+      if currentNode.GetValue() != None:
+        stringList += str(currentNode.GetValue()) + "\n"
+      currentNode = currentNode.GetNextNode()
+    return stringList
+
+  def AddHead(self, newValue: any) -> None:
+    """
+    Adds a value to the head end of the list.
+    
+    Args:
+      newValue: The new value to be added.
+    """
+
     newNode = Node(newValue)
-    oldHead = self.head
+    oldHead = self.__head
     if oldHead != None:
-      newNode.set_next_node(oldHead)
-      oldHead.set_prev_node(newNode)
-    self.head = newNode
-    if self.tail == None:
-      self.tail = newNode
+      newNode.SetNextNode(oldHead)
+      oldHead.SetPrevNode(newNode)
+    self.__head = newNode
+    if self.__tail == None:
+      self.__tail = newNode
 
-  def addTail(self, newValue):
+  def AddTail(self, newValue: any) -> None:
+    """
+    Adds a value to the tail end of the list.
+    
+    Args:
+      newValue: The new value to be added.
+    """
+
     newNode = Node(newValue)
-    oldTail = self.tail
+    oldTail = self.__tail
     if oldTail != None:
-      newNode.set_prev_node(oldTail)
-      oldTail.set_next_node(newNode)
-    self.tail = newNode
-    if self.head == None:
-      self.head = newNode
+      newNode.SetPrevNode(oldTail)
+      oldTail.SetNextNode(newNode)
+    self.__tail = newNode
+    if self.__head == None:
+      self.__head = newNode
 
-  def removeHead(self):
-    removeHead = self.head
+  def RemoveHead(self) -> any:
+    """
+    Removes the first value in the list.
+
+    Returns:
+      The first value
+    """
+
+    removeHead = self.__head
     if removeHead == None:
       return None
-    nextNode = removeHead.get_next_node()
+    nextNode = removeHead.GetNextNode()
     if nextNode != None:
-      nextNode.set_prev_node(None)
-    self.head = nextNode
-    if self.tail == removeHead:
-      self.removeTail()
-    return removeHead.get_value()
+      nextNode.SetPrevNode(None)
+    self.__head = nextNode
+    if self.__tail == removeHead:
+      self.RemoveTail()
+    return removeHead.GetValue()
 
-  def removeTail(self):
-    removeTail = self.tail
+  def RemoveTail(self) -> any:
+    """
+    Removes the last value in the list.
+    
+    Returns:
+      The last value.
+    """
+
+    removeTail = self.__tail
     if removeTail == None:
       return None
-    prevNode = removeTail.get_prev_node()
+    prevNode = removeTail.GetPrevNode()
     if prevNode != None:
-      prevNode.set_next_node(None)
-    self.tail = prevNode
-    if self.head == removeTail:
-      self.removeHead()
-    return removeTail.get_value()
+      prevNode.SetNextNode(None)
+    self.__tail = prevNode
+    if self.__head == removeTail:
+      self.RemoveHead()
+    return removeTail.GetValue()
 
-  def removeByValue(self, valueToRemove):
-    currentNode = self.head
+  def RemoveByValue(self, valueToRemove: any) -> Node:
+    """
+    Removes the given value from the list.
+    
+    Args:
+      valueToRemove: The value to be removed from list.
+
+    Returns:
+      The node to be removed.
+    """
+    currentNode = self.__head
     nodeToRemove = None
     while currentNode != None:
-      if currentNode.get_value() == valueToRemove:
+      if currentNode.GetValue() == valueToRemove:
         nodeToRemove = currentNode
         break;
-      currentNode = currentNode.get_next_node()
+      currentNode = currentNode.GetNextNode()
 
     if nodeToRemove == None:
       return None
 
-    if nodeToRemove == self.head:
-      self.removeHead()
-    elif nodeToRemove == self.tail:
-      self.removeTail()
+    if nodeToRemove == self.__head:
+      self.RemoveHead()
+    elif nodeToRemove == self.__tail:
+      self.RemoveTail()
     else:
-      prevNode = nodeToRemove.get_prev_node()
-      nextNode = nodeToRemove.get_next_node()
-      prevNode.set_next_node(nextNode)
-      nextNode.set_prev_node(prevNode)
+      prevNode = nodeToRemove.GetPrevNode()
+      nextNode = nodeToRemove.GetNextNode()
+      prevNode.SetNextNode(nextNode)
+      nextNode.SetPrevNode(prevNode)
     return nodeToRemove
 
-  def __str__(self):
-    stringList = ""
-    currentNode = self.head
-    while currentNode != None:
-      if currentNode.get_value() != None:
-        stringList += str(currentNode.get_value()) + "\n"
-      currentNode = currentNode.get_next_node()
-    return stringList
+  
