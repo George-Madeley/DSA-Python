@@ -6,6 +6,11 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.1.10
+
+- Created Queue Class.
+- Implimented `Peek()`, `Enqueue()`, and `Dequeue()` methods based on the Codecademy design.
+
 ### v1.1.9
 
 - Added Docstring to LinearSearch.py
