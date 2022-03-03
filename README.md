@@ -6,6 +6,12 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.1.6
+
+- Added Docstring to Node.py.
+- Added data types to Node.py.
+- Improved Node.py Class.
+
 ### v1.1.5
 
 - Created a Binary Search Class and implimented `FindIndexOfValue()`. It is based off of the Codecademy design.
@@ -31,6 +37,6 @@ Started the Linear Data Structures aspect.
 
 - Added a Linked List
 
-### v1.01
+### v1.0.1
 
 Added a Node class as a foundation for the ohter data structures.
