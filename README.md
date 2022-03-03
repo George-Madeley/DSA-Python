@@ -6,6 +6,13 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.1.9
+
+- Added Docstring to LinearSearch.py
+- Added data types to LinearSearch.py
+- Added Docstring to BinarySearch.py
+- Added data types to BinarySearch.py
+
 ### v1.1.8
 
 - Added Docstring to DoubleLinkedList.py.
