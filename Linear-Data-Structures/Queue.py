@@ -10,12 +10,28 @@ class Queue:
             value: Value of the first item in the queue (default: None).
             maxSize: The maximum size of the queue (default: None).
         """
-        
+
         self.__maxSize = maxSize
         self.__size = 1
         newNode = Node(value)
         self.__head = newNode
         self.__tail = newNode
+
+    def __str__(self) -> str:
+        """
+        Returns a string representation of the queue.
+        
+        Returns:
+            String representation of the queue.
+        """
+
+        stringQueue = ""
+        currentNode = self.__head()
+        while currentNode:
+            if currentNode.GetValue() != None:
+                stringQueue += str(currentNode.GetValue()) + "\n"
+            currentNode = currentNode.GetNextNode()
+        return stringQueue
 
     def GetSize(self) -> int:
         """

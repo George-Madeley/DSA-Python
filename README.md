@@ -6,6 +6,12 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.1.11
+
+- Created Stack Class.
+- Implimented `Peek()`, `Pop()`, and `Push()` methods based on the Codecademy design.
+- Added `__str__()` method to Queue class.
+
 ### v1.1.10
 
 - Created Queue Class.
