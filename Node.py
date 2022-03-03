@@ -3,7 +3,7 @@ class Node:
     A node class to be used in all data structures.
     """
 
-    def __init__(self, value: any, nextNode=None, prevNode=None) -> None:
+    def __init__(self, value: any, nextNode: 'Node' = None, prevNode: 'Node' = None) -> None:
         """
         Initialises the node class.
 

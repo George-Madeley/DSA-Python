@@ -6,6 +6,12 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.1.7
+
+- Added Docstring to LinkedList.py
+- Added data types to LinkedList.py
+- LinkedList class now uses the improved Node class instead of its own.
+
 ### v1.1.6
 
 - Added Docstring to Node.py.
