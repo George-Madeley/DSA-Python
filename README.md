@@ -6,6 +6,12 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.3.2
+
+- Added a BinarySearchTree Class.
+- Implimented the `insert()` method based on the Codecademy design.
+- Implimented the breadth-first and depth-first traversals with pre- post- and in order traversals.
+
 ### v1.3.1
 
 - Added a TreeNode Class.
