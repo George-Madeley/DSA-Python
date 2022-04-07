@@ -6,6 +6,11 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.3.1
+
+- Added a TreeNode Class.
+- Impliemented the `AddChild()` and `RemoveChild()` methods based on the Codecademy design.
+
 ### v1.2.1
 
 - Created a HashMap Class.
