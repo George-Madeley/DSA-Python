@@ -6,6 +6,11 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.3.3
+
+- Added a MinHeap Class.
+- Implimented the `Add()` and `RetrieveMin()` methods based on the Codecademy design.
+
 ### v1.3.2
 
 - Added a BinarySearchTree Class.
