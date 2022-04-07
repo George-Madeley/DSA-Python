@@ -6,6 +6,11 @@ In this repo, I will be creating amny linear and complex data structures along w
 
 ## Updates
 
+### v1.2.1
+
+- Created a HashMap Class.
+- Implimented `Retrieve()` and `Assign()` methods based on the Codecademy design.
+
 ### v1.1.11
 
 - Created Stack Class.
